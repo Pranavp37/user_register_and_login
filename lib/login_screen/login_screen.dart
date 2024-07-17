@@ -13,14 +13,7 @@ class LoginScreen extends StatelessWidget {
     final _emailFormkey = GlobalKey<FormState>();
     final _passFormkey = GlobalKey<FormState>();
     return Scaffold(
-      appBar: AppBar(
-          // leading: GestureDetector(
-          //   onTap: () => Navigator.pop(context),
-          //   child: Icon(
-          //     Icons.arrow_back,
-          //     size: 35,
-          //   ),
-          ),
+      appBar: AppBar(),
       body: SafeArea(
           child: SingleChildScrollView(
         child: Container(
@@ -70,6 +63,7 @@ class LoginScreen extends StatelessWidget {
                 Form(
                   key: _passFormkey,
                   child: TextFormField(
+                    obscureText: true,
                     controller: loginPassController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -81,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                       }
                     },
                     decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.remove_red_eye),
+                        suffixIcon: Icon(Icons.visibility_off),
                         hintText: 'Your Password',
                         hintStyle: TextStyle(color: Colors.black87),
                         border: OutlineInputBorder(
